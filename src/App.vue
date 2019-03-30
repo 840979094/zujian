@@ -1,29 +1,41 @@
 <template>
 	<div id='app'>
-		<app-header></app-header>
-		<router-view></router-view>
-		<router-view name='user'></router-view>
-		<router-view name='content'></router-view>
+		<ul id='list'></ul>
 	</div>
 </template>
 
 <script>
-import AppHeader from './components/AppHeader'
 
 export default {
 	name : 'app',
-	components:{
-		AppHeader
+	created(){
+		// this.$axios.get(`https://route.showapi.com/109-35?
+		// channelId=&channelName=&id=&maxResult=20
+		// &needAllList=0&needContent=0&needHtml=0
+		// &page=1&showapi_appid=90442&showapi_timestamp=${Date.now()}
+		// &title=足球&showapi_sign=afd10c722fd7498799cbd34b70810f4f`)
+		// .then((res)=>{
+		// 	console.log(res)
+		// })
+		// fetch('http://localhost:3000/admin?username=heaven&age=18',{
+		// 	// method:'POST',
+		// 	// body:`name=heaven&age=28`,
+		// 	// body:'name=heaven&age=28',
+		// 	headers:{
+		// 		'Content-Type':'application/x-www-form-urlencoded',
+		// 		//'Content-Type':'application/json'
+		// 	},
+		// 	mode:'cors'
+		// })
+
+		this.$axios.get('/admin?name=heaven')
+		
 	}
 }
+
+
 </script>
 
 <style scoped>
-#app{
-	max-width:1000px;
-	height:300px;
-	margin:50px auto;
-	box-shadow:0 0 10px 0 blue inset;
-}
 
 </style>
